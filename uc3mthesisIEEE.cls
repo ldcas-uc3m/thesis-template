@@ -102,7 +102,9 @@
 \RequirePackage{txfonts}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
-\RequirePackage{newtx}  % times new roman
+\RequirePackage{mathptmx}  % times new roman
+\RequirePackage{eurosym}  % \euro
+
 
 
 
