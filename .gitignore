@@ -25,6 +25,7 @@
 *.alg
 *.glg
 *.gls
+creationdate.timestamp
 
 svg-inkscape/
 _markdown_report
