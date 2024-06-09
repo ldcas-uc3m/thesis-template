@@ -1,0 +1,55 @@
+\ProvidesPackage{mymacros}[Auxiliary helper macros for the report]
+
+
+\RequirePackage{nameref}
+
+% \chapterref{mychap}
+% remember to create a label for the section (\label{chap:mychap})
+\newcommand{\chapterref}[1] {%
+  Chapter \ref{chap:#1}, \textit{\nameref{chap:#1}}%
+}
+
+% \sectionref{mysec}
+% remember to create a label for the section (\label{sec:mysec})
+\newcommand{\sectionref}[1] {%
+  Section \ref{sec:#1}, \textit{\nameref{sec:#1}}%
+}
+
+% \subsectionref{mysubsec}
+% remember to create a label for the subsection (\label{subsec:mysubsec})
+\newcommand{\subsectionref}[1] {%
+  Subsection \ref{subsec:#1}, \textit{\nameref{subsec:#1}}%
+}
+
+
+% \drawiosvgfigure[width]{filename}{caption}
+% remember to disable Word Wrap and Formatted Text for all text (https://www.drawio.com/doc/faq/svg-export-text-problems#disable-formatted-text-and-word-wrap)
+\newcommand{\drawiosvgfigure}[3][0.7] {
+  \begin{figure}[h]
+    \centering
+    \includesvg[inkscapelatex=false,width=#1\textwidth]{#2.drawio.svg}
+    \caption{#3}
+    \label{fig:#2}
+  \end{figure}
+}
+
+
+% Command to create a glossary entry with correspondent acronym.
+% \newglossaryentrywithacronym{acronym/name}{long name}{description}
+\newcommand{\newglossaryentrywithacronym}[3]{
+    %%% The glossary entry the acronym links to   
+    \newglossaryentry{#1_gls}{
+        name={#1},
+        long={#2},
+        description={#3}
+    }
+
+    % Acronym pointing to glossary
+    \newglossaryentry{#1}{
+        type=\acronymtype,
+        name={#1},
+        description={#2},
+        first={#2 (#1)\glsadd{#1_gls}},
+        see=[Glossary:]{#1_gls}
+    }
+}

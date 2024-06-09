@@ -1,0 +1,23 @@
+\makeglossaries
+% \makenoidxglossaries  % slower, but no need to do $ makeglossaries report.tex
+
+
+% usage:
+% - \gls{term}: regular stuff
+% - \Gls{term}: first uppercase
+% - \glspl{term}: plural
+% - \Glspl{term}: you know the drill
+% - \glsdisp{term}{custom text}: link with custom text
+% https://www.overleaf.com/learn/latex/Glossaries
+
+
+\newglossaryentry{caca} {
+  name = {caca},
+  description = {mucha caca}
+}
+
+\newglossaryentrywithacronym{CAC}
+{cacaaaaaaa}
+{}
+
+\newacronym{gcd}{GCD}{Greatest Common Divisor}
