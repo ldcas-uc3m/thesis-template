@@ -36,6 +36,7 @@
   % COVER
   \makecover
 
+
   % EPIGRAPH
   \makeepigraph
     {Cacaaaaaaaaaaaaa}  % quote
@@ -43,17 +44,17 @@
     {}  % source
 
 
+  % ACKNOWLEDGEMENTS
+  \begin{acknowledgements}
+    % 
+  \end{acknowledgements}
+
+
   % ABSTRACT
   \begin{abstract}
     \lipsum[1-3]
     \keywords{Caca, culo, pedo, pis}
   \end{abstract}
-
-
-  % ACKNOWLEDGEMENTS
-  \begin{acknowledgements}
-    % 
-  \end{acknowledgements}
 
 
   % TOC
@@ -77,16 +78,18 @@
     \import{parts/}{example.tex}
   \end{thesis}
 
+
   % BIBLIOGRAPHY
   \cleardoublepage
   \label{bibliography}
   \printbibliography[heading=bibintoc]
 
+
   % GLOSSARY
   \cleardoublepage
   \label{glossary}
-	\printglossaries
-	% \printnoidxglossaries[type=\acronymtype]  % slower, but no need to do $ makeglossaries report
+  \printglossaries
+  % \printnoidxglossaries[type=\acronymtype]  % slower, but no need to do $ makeglossaries report
 
 
   % APPENDICES
