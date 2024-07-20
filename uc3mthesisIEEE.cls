@@ -122,7 +122,7 @@
 	\def\@keywords@text{Palabras clave}
 	\def\@thesis@text{Trabajo Fin de Grado}
 	\def\@author@text{Autor}
-	\def\@tutor@text{Tutor}
+	\def\@advisor@text{Tutor}
 	\def\@ccstring{Esta obra se encuentra sujeta a la licencia Creative Commons\\\textbf{Reconocimiento - No Comercial - Sin Obra Derivada}}
 	\def\@table@caption{TABLA}
 	\def\@pluralpostfix{es}
@@ -138,7 +138,7 @@
 	\def\@keywords@text{Keywords}
 	\def\@thesis@text{Bachelor Thesis}
 	\def\@author@text{Author}
-	\def\@tutor@text{Tutor}
+	\def\@advisor@text{Advisor}
 	\def\@ccstring{This work is licensed under Creative Commons\\\textbf{Attribution - Non Commercial - Non Derivatives}}
 	\def\@table@caption{TABLE}
 	\def\@pluralpostfix{s}
@@ -271,6 +271,15 @@
 
 \setcounter{tocdepth}{2}  % until subsection
 
+% pagestyle
+\tocloftpagestyle{noheader}
+
+% fix bug where middle pages don't get the style
+\preto{\tableofcontents}{\pagestyle{noheader}}
+\preto{\listoffigures}{\pagestyle{noheader}}
+\preto{\listoftables}{\pagestyle{noheader}}
+
+
 % chapters
 \makeatletter
 \titlecontents{chapter}
@@ -297,24 +306,25 @@
 	}
 \makeatother
 
-	% sections
-	\titlecontents{section}
-		[5pt]  % left margin
-		{}  % above
-		{\contentsmargin{0pt}\thecontentslabel.\enspace}  % before with label
-		{\contentsmargin{0pt}}  % before without label
-		{\titlerule*[.7pc]{.}\contentspage}  % filler and page
+% sections
+\titlecontents{section}
+	[5pt]  % left margin
+	{}  % above
+	{\contentsmargin{0pt}\thecontentslabel.\enspace}  % before with label
+	{\contentsmargin{0pt}}  % before without label
+	{\titlerule*[.7pc]{.}\contentspage}  % filler and page
 
-	% subsections
-	\titlecontents{subsection}[10pt]
-		{}
-		{\contentsmargin{0pt} \thecontentslabel.\enspace}
-		{\contentsmargin{0pt}}
-		{\titlerule*[.7pc]{.}\contentspage}
+% subsections
+\titlecontents{subsection}[10pt]
+	{}
+	{\contentsmargin{0pt} \thecontentslabel.\enspace}
+	{\contentsmargin{0pt}}
+	{\titlerule*[.7pc]{.}\contentspage}
 
 % blue colors for chapters
 \renewcommand{\cftchapfont}{\hypersetup{hidelinks}\bfseries\color{azulUC3M}}
 \renewcommand{\cftchappagefont}{\bfseries\color{azulUC3M}}
+
 
 
 %----------
@@ -442,16 +452,15 @@
 \makeatletter
 
 % setup variables
-\newcommand{\tutors}[1] {
-	\readlist*\@tutors{#1}
+\newcommand{\advisors}[1] {
+	\readlist*\@advisors{#1}
 }
 \newcommand{\degree}[1]{\gdef\@degree{#1}}
 \newcommand{\subject}[1]{\gdef\@subject{#1}}
-\newcommand{\course}[1]{\gdef\@course{#1}}
 \newcommand{\place}[1]{\gdef\@place{#1}}
 \newcommand{\shorttitle}[1]{\gdef\@shorttitle{#1}}
 
-\newcommand{\makecover} {  % requires \degree, \subject, \author, \course, \title, \tutors, \place, \date
+\newcommand{\makecover} {  % requires \degree, \subject, \author, \course, \title, \advisors, \place, \date
 
 	\pagenumbering{roman}  % roman numerals are used in the numbering of the pages preceding the body of the work
 
@@ -465,7 +474,6 @@
 			\vspace{1.5cm}
 			\begin{Large}
 				\@degree\\
-				\@course\\  % Academic year
 				\vspace{2cm}
 				\textsl{\@thesis@text}
 				\bigskip
@@ -483,12 +491,12 @@
 			\medskip
 			%
 			\begin{Large}
-				\if\listlen\@tutors[]1  % only one tutor
-					\textit{\@tutor@text}\\
+				\if\listlen\@advisors[]1  % only one advisor
+					\textit{\@advisor@text}\\
 				\else
-					\textit{\@tutor@text\@pluralpostfix}\\
+					\textit{\@advisor@text\@pluralpostfix}\\
 				\fi
-				\foreachitem\z\in\@tutors[]{
+				\foreachitem\z\in\@advisors[]{
 					\z\\
 				}
 				% \vspace*{1cm}
@@ -574,14 +582,21 @@
 		\pagestyle{noheader}
 		\chapter*{\@abstract@text}
 	}
-	{\cleardoublepage}  % end definition
+	{\cleardoublepage\pagestyle{noheader}}  % end definition
+
+% TODO: automate keywords, inserting automatic separators
 
 \newcommand{\keywords}[1]{
-	% TODO: make command only work inside abstract environment
 	\vfill
-	\textbf{\@keywords@text:} #1.%
+	\textbf{\@keywords@text:} #1%
 }
+
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+
 \makeatother
+
+\newcommand{\sep}{$\bigcdot$\xspace}
 
 
 
@@ -591,7 +606,7 @@
 
 \newenvironment{thesis}
 	{  % begin definition
-		\clearpage
+		\cleardoublepage
 		\pagestyle{fancy}
 		\pagenumbering{arabic}  % numbering with Arabic numerals for the rest of the document
 	}
@@ -635,6 +650,7 @@
 \makeatother
 
 \AtBeginEnvironment{appendices}{%
+	\cleardoublepage
 	\pagenumbering{gobble}  % remove appendices have no page numbers
 	\setcounter{footnote}{0}  % reset footnote counter
 }
