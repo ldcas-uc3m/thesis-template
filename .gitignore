@@ -1,3 +1,5 @@
+.vscode/
+
 *.aux
 *.bcf
 *.fdb_latexmk
