@@ -110,7 +110,7 @@ Aquí te dejamos algunos ejemplos de memorias hechas con esta plantilla:
 - [J. Lázaro – Development of a Symbolic Calculator from Scratch](https://github.com/JorgeyGari/sym_tfg/tree/main/report) (2024)
 
 > [!NOTE]
-> Si usas esta plantilla, por favor crea una [_pull request_](https://github.com/ldcas-uc3m/thesis-template/pulls) añadiendo tu repositorio a la lista.
+> Si usas esta plantilla, por favor abre un [_issue_](https://github.com/ldcas-uc3m/thesis-template/issues) o crea una [_pull request_](https://github.com/ldcas-uc3m/thesis-template/pulls) añadiendo tu repositorio a la lista.
 
 
 ## Más información
