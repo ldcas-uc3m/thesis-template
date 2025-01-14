@@ -110,4 +110,4 @@ Aquí te dejamos algunos ejemplos de memorias hechas con esta plantilla:
 
 
 ## Más información
-- [Transparencias de la presentación "" (2025)](https://github.com/rajayonin/latex-thesis)
+- [Transparencias de la presentación "Memorias de TFG en LaTeX"](https://github.com/rajayonin/latex-thesis) (2025)
