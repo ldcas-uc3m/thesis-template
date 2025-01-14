@@ -108,6 +108,9 @@ Algunas extensiones útiles:
 Aquí te dejamos algunos ejemplos de memorias hechas con esta plantilla:
 - [ldcas-uc3m/TFG](https://github.com/ldcas-uc3m/TFG/tree/main/report)
 
+> [!NOTE]
+> Si usas esta plantilla, por favor crea una [_pull request_](https://github.com/ldcas-uc3m/thesis-template/pulls) añadiendo tu repositorio a la lista.
+
 
 ## Más información
 - [Transparencias de la presentación "Memorias de TFG en LaTeX"](https://github.com/rajayonin/latex-thesis) (2025)
