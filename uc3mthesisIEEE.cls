@@ -25,7 +25,6 @@
 \newif\if@langes@pp\@langes@ppfalse  % check es language
 \DeclareOption{es}{\@langes@pptrue}
 
-\ExecuteOptions{en}  % defaults
 \ProcessOptions\relax
 
 
