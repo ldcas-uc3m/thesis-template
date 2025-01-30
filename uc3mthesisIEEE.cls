@@ -370,7 +370,6 @@
 \RequirePackage{svg}
 \RequirePackage{subcaption}  % \begin{subfigure}, etc.
 
-\graphicspath{{img/}}  % Images folder
 
 % Figures layout for engineering
 \captionsetup[figure]{
