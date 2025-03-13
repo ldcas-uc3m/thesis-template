@@ -1,11 +1,8 @@
-% Bachelor Thesis Template of the Universidad Carlos III de Madrid, IEEE style, loosely following doctoral thesis guidelines (https://uc3m.libguides.com/en/thesis/writing)
-% Based on the University Library's Bachelor Thesis Template, found in https://www.overleaf.com/latex/templates/bachelor-thesis-template-uc3m-ieee-style/rtmtnzvxjnwt
-% Made by Luis Daniel Casais Mezquida <https://github.com/ldcas-uc3m>
+% Bachelor Thesis Template of the Universidad Carlos III de Madrid, IEEE style, loosely following doctoral thesis guidelines (https://uc3m.libguides.com/TFG/escribir)
+% Based on the University Library's Bachelor Thesis Template, found at https://www.overleaf.com/latex/templates/bachelor-thesis-template-uc3m-ieee-style/rtmtnzvxjnwt
+% Made by Luis Daniel Casais Mezquida <luisdaniel.casais@alumnos.uc3m.es>
 
 % LICENSE: Creative Commons CC BY 4.0
-
-% WARNING: This Guide contains Library recommendations based mainly on the IEEE style, but you must always follow the guidelines of your TFG Tutor and the TFG regulations for your degree
-
 
 
 \NeedsTeXFormat{LaTeX2e}

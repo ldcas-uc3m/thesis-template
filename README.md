@@ -1,4 +1,6 @@
-# TFG Report
+# Plantilla de TFG de la Universidad Carlos III de Madrid (IEEE)
+Por Luis Daniel Casais Mezquida
+
 
 ## Uso
 La memoria consiste de un archivo principal [`report.tex`](report.tex), y un archivo de definición de clase [`uc3mthesisIEEE.cls`](uc3mthesisIEEE.cls), el cual contiene toda la configuración.
@@ -63,15 +65,25 @@ La clase también cuenta con un entorno predefinido:
 ## Compilación
 Primero debes instalar LaTeX.
 
-- Para Linux, instala `texlive-full` (tarda un rato).
-- Para Windows, instala [MiKTeX](https://miktex.org/download#win), asegúrate de añadirlo al `PATH`, e instala [Strawberry Perl](https://strawberryperl.com/). Si no está ya instalado, abre la MikTeX Console e instala el paquete `latexmk` desde la pestaña `Packages`.
-- Para MacOS, instala [MacTeX](https://www.tug.org/mactex/mactex-download.html) e instala `latexmk` con:
+- Para Linux, instala [TeX Live](https://www.tug.org/texlive/):
+    - [APT](https://wiki.debian.org/AptCLI) ([Debian](https://www.debian.org/)/[Ubuntu](https://ubuntu.com/)): [`texlive-full`](https://packages.debian.org/search?keywords=texlive-full&searchon=names&suite=stable&section=all)
+    - [DNF](https://dnf.readthedocs.io/en/latest/) ([Fedora](https://fedoraproject.org/)): [`texlive-scheme-full`](https://packages.fedoraproject.org/pkgs/texlive/texlive-scheme-full/)
+    - [AUR](https://aur.archlinux.org/) ([Arch](https://archlinux.org/)): [`texlive-full`](https://aur.archlinux.org/packages/texlive-full)
+- Para Windows, instala [MiKTeX](https://miktex.org/download#win), asegúrate de añadirlo al `PATH`, e instala [Strawberry Perl](https://strawberryperl.com/).  
+    Con [winget](https://github.com/microsoft/winget-cli):
+    ```powershell
+    winget install MiKTeX.MiKTeX StrawberryPerl.StrawberryPerl
     ```
-    sudo tlmgr install latexmk
+  Una vez instalado MiKTeX, ábrelo, ve a `Updates` y actualiza todos los paquetes.
+
+- Para MacOS, instala [MacTeX](https://www.tug.org/mactex/mactex-download.html).  
+    Con [brew](https://brew.sh):
+    ```
+    brew install --cask mactex
     ```
 
 > [!IMPORTANT]
-> Como vamos a usar archivos SVG, necesitas instalar [Inkscape](https://inkscape.org/).
+> Como vamos a usar imágenes SVG, necesitas instalar [Inkscape](https://inkscape.org/).
 > 
 > Si estás en Windows, asegúrate de añadir el ejecutable al `PATH` (suele estar en `C:\Program Files\Inkscape\bin\`).
 
@@ -89,19 +101,31 @@ makeglossaries report
 Y luego volver a compilar.
 
 
+> [!TIP]
+> Opcionalmente, puedes especificar el directorio de salida con el parámetro `-outdir`, e.g. `-outdir=build`
+> 
+> Si te encuentras con problemas al compilar, asegúrate de que existen todas las subcarpetas (e.g. `build/parts/`).
 
-## VS Code
-Algunas extensiones útiles:
-- [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
+
+## Extensiones VS Code
+### [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
+_Suite_ para LaTeX, con _syntax highlighting_, completado, visor de PDFs, compilación automática al guardar...
+
 > [!IMPORTANT]
-> Si estás usando esta extensión, por favor añade el parámetro `-shell-escape` (ver [LaTeX Workshop FAQ](https://github.com/James-Yu/LaTeX-Workshop/wiki/FAQ#how-to-pass--shell-escape-to-latexmk))
+> Si estás usando esta extensión, recuerda añadir el parámetro `-shell-escape` (ver [LaTeX Workshop FAQ](https://github.com/James-Yu/LaTeX-Workshop/wiki/FAQ#how-to-pass--shell-escape-to-latexmk))
+
+> [!TIP]
+> Puedes cambiar el directorio de salida en `latex-workshop.latex.outDir`, poniéndolo por ejemplo a `%DIR%/build` (ver [LaTeX Workshop Wiki](https://github.com/James-Yu/LaTeX-Workshop/wiki/View#latex-workshoplatexoutdir)).  
+> Si te encuentras con problemas al compilar, asegúrate de que existen todas las subcarpetas (e.g. `build/parts/`).
 
 > [!TIP]
 > Puedes habilitar el conteo de palabras estableciendo `latex-workshop.wordcount` a `onSave` en los ajustes. Más información [aquí](https://github.com/James-Yu/LaTeX-Workshop/wiki/ExtraFeatures#counting-words).
 
-- [LTeX+](https://marketplace.visualstudio.com/items?itemName=ltex-plus.vscode-ltex-plus): Corrector ortográfico.
+### [LTeX+](https://marketplace.visualstudio.com/items?itemName=ltex-plus.vscode-ltex-plus)
+Corrector ortográfico para LaTeX y MarkDown.
+
 > [!TIP]
-> Puedes cambiar el idioma del corrector a través del parámetro `ltex.language` en la configuración de VS Code
+> Puedes cambiar el idioma del corrector a través del parámetro `ltex.language` en la [configuración de VS Code](https://code.visualstudio.com/docs/editor/settings#_settings-json-file)
 
 
 ## Ejemplos
@@ -114,4 +138,8 @@ Aquí te dejamos algunos ejemplos de memorias hechas con esta plantilla:
 
 
 ## Más información
+- [Guía de estilo de la biblioteca de la UC3M para el TFG](https://uc3m.libguides.com/TFG/escribir)
 - [Transparencias de la presentación "Memorias de TFG en LaTeX"](https://github.com/rajayonin/latex-thesis) (2025)
+- [How to LaTeX?](https://github.com/guluc3m/report-template/blob/main/README.md#how-to-latex), en [guluc3m/report-template](https://github.com/guluc3m/report-template)
+- [Plantilla de TFG de la biblioteca de la UC3M](https://www.overleaf.com/latex/templates/bachelor-thesis-template-uc3m-ieee-style/rtmtnzvxjnwt)
+- [L. Prieto - Plantilla TFG UC3M LaTeX](https://github.com/lpgonzalez/uc3m_tfg_latex_template_en)
