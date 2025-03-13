@@ -179,7 +179,7 @@
 	\fancyhead[LO]{\color{azulUC3M}\textsc{\leftmark}}  % chapter name
 	\ifdef{\@shorttitle}  % title
 		{\fancyhead[RE]{\color{azulUC3M}\textsc{\@shorttitle}}}
-		{\fancyhead[RE]{\color{azulUC3M}\@title}}
+		{\fancyhead[RE]{\color{azulUC3M}\textsc\@title}}
 	\fancyhead[LE,RO]{\color{azulUC3M}\thepage}  % page number
 	\renewcommand{\headrulewidth}{0.4pt}
 }
