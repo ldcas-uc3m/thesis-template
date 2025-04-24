@@ -109,7 +109,7 @@
 %----------
 
 \if@langes@pp
-	\RequirePackage[spanish,es-tabla,es-noshorthands]{babel}
+	\RequirePackage[spanish,es-tabla,es-noshorthands,es-noindentfirst]{babel}
 	\RequirePackage[babel,spanish=spanish]{csquotes}
 
 	\renewcommand{\bibname}{Referencias}
