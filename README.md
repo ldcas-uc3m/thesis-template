@@ -132,6 +132,9 @@ Corrector ortográfico para LaTeX y MarkDown.
 Aquí te dejamos algunos ejemplos de memorias hechas con esta plantilla:
 - [L. D. Casais – Analysis, Design and Implementation of a Didactic and Generic Assembly Language Simulator](https://github.com/ldcas-uc3m/TFG/tree/main/report) (2024)
 - [J. Lázaro – Development of a Symbolic Calculator from Scratch](https://github.com/JorgeyGari/sym_tfg/tree/main/report) (2024)
+- [A. Guerrero - Desarrollo de un Compilador Genérico de Lenguaje Ensamblador para el Simulador CREATOR](https://github.com/ALVAROPING1/TFG) (2025)
+- [C. López - Desarrollo de instrucciones vectoriales RISC-V para el simulador CREATOR](https://github.com/CLopMan/creator/tree/master/report) (2025)
+- [A. Fernández - Herramienta didáctica para la programación concurrente](https://github.com/Adri-Extremix/Trabajo-de-Fin-de-Grado/tree/main/doc) (2025)
 
 > [!NOTE]
 > Si usas esta plantilla, por favor abre un [_issue_](https://github.com/ldcas-uc3m/thesis-template/issues) o crea una [_pull request_](https://github.com/ldcas-uc3m/thesis-template/pulls) añadiendo tu repositorio a la lista.
