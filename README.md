@@ -1,5 +1,12 @@
-# Plantilla de TFG de la Universidad Carlos III de Madrid (IEEE)
+# Plantilla LaTeX de TFG de la Universidad Carlos III de Madrid (IEEE)
 Por Luis Daniel Casais Mezquida
+
+> [!WARNING]
+> Esta plantilla funcionó para lo que quería hacer, pero no tengo intención de seguir manteniéndola.
+> 
+> Recomiendo _encarecidamente_ usar [Typst](https://typst.app/) en lugar de LaTeX, por su facilidad de uso y velocidad de compilación.
+>
+> Puedes encontrar una versión mejorada de esta plantilla, en versión Typst, en [guluc3m/uc3m-thesis-ieee-typst](https://github.com/guluc3m/uc3m-thesis-ieee-typst/).
 
 
 ## Uso
